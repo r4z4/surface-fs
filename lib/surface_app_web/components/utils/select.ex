@@ -59,13 +59,13 @@ defmodule SurfaceAppWeb.Components.Utils.Select do
                 <div class={"col-span-1"}>
                 </div>
 
-                <div class={"p-2 col-span-1 bg-slate-200 rounded shadow-md", @diff_easy}>
+                <div class={"py-4 col-span-1 bg-slate-200 rounded shadow-md", @diff_easy}>
                   <Button kind="is-select" label={ "Easy" } value={"easy"} click={"diff_select"} />
                 </div>
-                <div class={"p-2 col-span-1 bg-slate-200 rounded shadow-md", @diff_med}>
-                  <Button kind="is-select" label={ "Medium" } value={"med"} click={"diff_select"} />
+                <div class={"py-4 col-span-1 bg-slate-200 rounded shadow-md", @diff_med}>
+                  <Button kind="is-select" label={ "Med" } value={"med"} click={"diff_select"} />
                 </div>
-                <div class={"p-2 col-span-1 bg-slate-200 rounded shadow-md", @diff_hard}>
+                <div class={"py-4 col-span-1 bg-slate-200 rounded shadow-md", @diff_hard}>
                   <Button kind="is-select" label={ "Hard" } value={"hard"} click={"diff_select"} />
                 </div>
           </div>
@@ -176,7 +176,7 @@ defmodule SurfaceAppWeb.Components.Utils.Select do
         IO.inspect atom
         {:noreply,
           socket
-          |> assign(atom, "border-solid border-2 border-fuchsia-100")
+          |> assign(atom, "border-solid border-6 border-sky-500")
           |> assign(cat_selected: true)
           |> assign(game_category: choice)}
       end
@@ -198,7 +198,7 @@ defmodule SurfaceAppWeb.Components.Utils.Select do
         IO.inspect atom
         {:noreply,
           socket
-          |> assign(atom, "border-solid border-2 border-fuchsia-100")
+          |> assign(atom, "border-solid border-6 border-sky-500")
           |> assign(length_selected: true)
           |> assign(game_length: choice)}
       end
@@ -221,7 +221,7 @@ defmodule SurfaceAppWeb.Components.Utils.Select do
         IO.inspect atom
         {:noreply,
           socket
-          |> assign(atom, "border-solid border-2 border-fuchsia-100")
+          |> assign(atom, "border-solid border-6 border-sky-500")
           |> assign(diff_selected: true)
           |> assign(game_diff: choice)}
       end

@@ -14,6 +14,7 @@ defmodule SurfaceAppWeb.Components.Utils.ButtonCard do
     {:noreply, socket}
   end
 
+  # Another lit = https://upload.wikimedia.org/wikipedia/commons/0/08/Ink_and_Quill.png
   # Another movie = https://upload.wikimedia.org/wikipedia/commons/3/3f/Film_reel.svg
   # Science gif = https://upload.wikimedia.org/wikipedia/commons/1/17/A-DNA_orbit_animated_small.gif
   # geo = https://upload.wikimedia.org/wikipedia/commons/a/a0/Earth_gravity.png
@@ -21,7 +22,7 @@ defmodule SurfaceAppWeb.Components.Utils.ButtonCard do
   defp img_src(cat) do
     IO.inspect cat
     cond do
-      cat == "Literature" -> "https://upload.wikimedia.org/wikipedia/commons/1/1d/P_literature.svg"
+      cat == "Literature" -> "https://upload.wikimedia.org/wikipedia/commons/d/d2/P_writing_blue.png"
       cat == "Sci/Tech" -> "https://upload.wikimedia.org/wikipedia/commons/3/37/Sciences_exactes.svg"
       cat == "Sports" -> "https://upload.wikimedia.org/wikipedia/commons/7/7f/Generic_football.png"
       cat == "World" -> "https://upload.wikimedia.org/wikipedia/commons/f/f9/Location-pin.png"
@@ -34,12 +35,12 @@ defmodule SurfaceAppWeb.Components.Utils.ButtonCard do
     ~F"""
     <button type="button" value={@value} class={"button", @kind} :on-click={@click}>
       <div class="flex justify-center">
-        <div class="rounded-lg shadow-lg max-w-sm">
+        <div class="rounded-lg shadow-lg max-w-sm max-h-60">
           <a href="#!">
             <img class="max-w-full h-auto rounded-t-md" src={img_src(@label)} alt=""/>
           </a>
           <div class="">
-            <h5 class="text-gray-900 text-xl font-medium mb-2">{@label}</h5>
+            <h5 class="text-gray-900 text-xl font-indie font-medium mb-2">{@label}</h5>
             <!--<p class="text-gray-700 text-base mb-4">
               Some quick example text to build on the card title and make up the bulk of the card's
               content.

@@ -13,7 +13,7 @@ defmodule SurfaceAppWeb.Components.Utils.Heading do
     end
 
     defp get_color(color) do
-      "text-" <> color <> "-600"
+      "text-" <> color <> "-400"
     end
 
     defp get_size(size) do
