@@ -3,6 +3,7 @@ FROM elixir:1.14
 RUN apt-get -y update && \
 	DEBIAN_FRONTEND=noninteractive \
 	apt-get -y --no-install-recommends install postgresql-client npm curl zsh inotify-tools
+RUN sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 RUN rm -rf /var/cache/apt/*
 
 RUN mix local.hex --force && \
