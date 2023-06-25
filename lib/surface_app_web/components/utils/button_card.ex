@@ -34,7 +34,7 @@ defmodule SurfaceAppWeb.Components.Utils.ButtonCard do
     ~F"""
     <button type="button" value={@value} class={"button", @kind} :on-click={@click}>
       <div class="flex justify-center">
-        <div class="rounded-lg shadow-lg bg-white max-w-sm">
+        <div class="rounded-lg shadow-lg max-w-sm">
           <a href="#!">
             <img class="max-w-full h-auto rounded-t-md" src={img_src(@label)} alt=""/>
           </a>

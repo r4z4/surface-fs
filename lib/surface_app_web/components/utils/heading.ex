@@ -8,7 +8,7 @@ defmodule SurfaceAppWeb.Components.Utils.Heading do
 
     def render(assigns) do
         ~F"""
-          <h1 class={"grid items-center justify-center leading-tight text-3xl mt-0", get_color(@color), get_size(@size)}>{ @title }</h1>
+          <h1 class={"grid items-center font-indie justify-center leading-tight text-3xl mt-0", get_color(@color), get_size(@size)}>{ @title }</h1>
         """
     end
 

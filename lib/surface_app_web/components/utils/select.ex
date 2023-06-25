@@ -40,63 +40,63 @@ defmodule SurfaceAppWeb.Components.Utils.Select do
          <div class="col-span-1 pr-4"><h5 class="text-sky-600 font-medium mb-2 mt-2 text-right">Difficulty</h5></div>
         </div>
           <div class="grid sm:grid-cols-9 md:grid-cols-9 lg:grid-cols-9 gap-3">
-                <div class={"p-4 col-span-1 bg-white rounded shadow-md", @length_5}>
+                <div class={"p-4 col-span-1 bg-slate-200 rounded shadow-md", @length_5}>
                   <Button kind="is-select" label={ "5" } value={5} click={"length_select"} />
                 </div>
-                <div class={"p-4 col-span-1 bg-white rounded shadow-md", @length_10}>
+                <div class={"p-4 col-span-1 bg-slate-200 rounded shadow-md", @length_10}>
                   <Button kind="is-select" label={ "10" } value={10} click={"length_select"} />
                 </div>
-                <div class={"p-4 col-span-1 bg-white rounded shadow-md", @length_15}>
+                <div class={"p-4 col-span-1 bg-slate-200 rounded shadow-md", @length_15}>
                   <Button kind="is-select" label={ "15" } value={15} click={"length_select"} />
                 </div>
-                <div class={"p-4 col-span-1 bg-white rounded shadow-md", @length_20}>
+                <div class={"p-4 col-span-1 bg-slate-200 rounded shadow-md", @length_20}>
                   <Button kind="is-select" label={ "20" } value={20} click={"length_select"} />
                 </div>
-                <div class={"p-4 col-span-1 bg-white rounded shadow-md", @length_25}>
+                <div class={"p-4 col-span-1 bg-slate-200 rounded shadow-md", @length_25}>
                   <Button kind="is-select" label={ "25" } value={25} click={"length_select"} />
                 </div>
                 
                 <div class={"col-span-1"}>
                 </div>
 
-                <div class={"p-2 col-span-1 bg-white rounded shadow-md", @diff_easy}>
+                <div class={"p-2 col-span-1 bg-slate-200 rounded shadow-md", @diff_easy}>
                   <Button kind="is-select" label={ "Easy" } value={"easy"} click={"diff_select"} />
                 </div>
-                <div class={"p-2 col-span-1 bg-white rounded shadow-md", @diff_med}>
+                <div class={"p-2 col-span-1 bg-slate-200 rounded shadow-md", @diff_med}>
                   <Button kind="is-select" label={ "Medium" } value={"med"} click={"diff_select"} />
                 </div>
-                <div class={"p-2 col-span-1 bg-white rounded shadow-md", @diff_hard}>
+                <div class={"p-2 col-span-1 bg-slate-200 rounded shadow-md", @diff_hard}>
                   <Button kind="is-select" label={ "Hard" } value={"hard"} click={"diff_select"} />
                 </div>
           </div>
           <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2">
             <div class="w-50 p-4">
-                <div class={"p-8 bg-white rounded shadow-md", @selected_1}>
+                <div class={"p-8 bg-slate-200 rounded shadow-md", @selected_1}>
                   <ButtonCard label="Sci/Tech" value="1" click={"select"} />
                 </div>
             </div>
             <div class="w-50 p-4">
-                <div class={"p-8 bg-white rounded shadow-md", @selected_2}>
+                <div class={"p-8 bg-slate-200 rounded shadow-md", @selected_2}>
                   <ButtonCard label="Sports" value="2" click={"select"} />
                 </div>
             </div>
             <div class="w-50 p-4">
-                <div class={"p-8 bg-white rounded shadow-md", @selected_3}>
+                <div class={"p-8 bg-slate-200 rounded shadow-md", @selected_3}>
                   <ButtonCard label="World" value="3" click={"select"} />
                 </div>
             </div>
             <div class="w-50 p-4">
-                <div class={"p-8 bg-white rounded shadow-md", @selected_4}>
+                <div class={"p-8 bg-slate-200 rounded shadow-md", @selected_4}>
                   <ButtonCard label="Movies" value="4" click={"select"} />
                 </div>
             </div>
             <div class="w-50 p-4">
-                <div class={"p-8 bg-white rounded shadow-md", @selected_5}>
+                <div class={"p-8 bg-slate-200 rounded shadow-md", @selected_5}>
                   <ButtonCard label="Literature" value="5" click={"select"} />
                 </div>
             </div>
             <div class="w-50 p-4">
-                <div class={"p-8 bg-white rounded shadow-md", @selected_6}>
+                <div class={"p-8 bg-slate-200 rounded shadow-md", @selected_6}>
                   <ButtonCard label="Random" value="6" click={"select"} />
                 </div>
             </div>
@@ -176,7 +176,7 @@ defmodule SurfaceAppWeb.Components.Utils.Select do
         IO.inspect atom
         {:noreply,
           socket
-          |> assign(atom, "border-solid border-2 border-sky-500")
+          |> assign(atom, "border-solid border-2 border-fuchsia-100")
           |> assign(cat_selected: true)
           |> assign(game_category: choice)}
       end
@@ -198,7 +198,7 @@ defmodule SurfaceAppWeb.Components.Utils.Select do
         IO.inspect atom
         {:noreply,
           socket
-          |> assign(atom, "border-solid border-2 border-sky-500")
+          |> assign(atom, "border-solid border-2 border-fuchsia-100")
           |> assign(length_selected: true)
           |> assign(game_length: choice)}
       end
@@ -221,7 +221,7 @@ defmodule SurfaceAppWeb.Components.Utils.Select do
         IO.inspect atom
         {:noreply,
           socket
-          |> assign(atom, "border-solid border-2 border-sky-500")
+          |> assign(atom, "border-solid border-2 border-fuchsia-100")
           |> assign(diff_selected: true)
           |> assign(game_diff: choice)}
       end

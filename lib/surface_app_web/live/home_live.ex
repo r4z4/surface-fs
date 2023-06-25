@@ -33,8 +33,8 @@ defmodule SurfaceAppWeb.HomeLive do
     <div class="relative">
       <PlayerCountLive id="player_count_live" />
     </div>
-    <Heading title="Surface Trivia Lobby" />
-    <Heading title="Please Select Game Options" />
+    <Heading color="white" title="Surface Trivia Lobby" />
+    <Heading color="white" title="Please Select Game Options" />
     <Select user_id={ @user_id } id="select" />
     """
   end

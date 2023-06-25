@@ -1,5 +1,5 @@
 <section class="text-gray-700 bg-slate-950 body-font container mx-auto">
-        <div class="anim_container bg-slate-800">
+        <div class="anim_container bg-slate-900">
           <h1 class="font-indie">Surface Trivia</h1>
           <svg class="pulse" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <circle id="Oval" cx="512" cy="512" r="512"></circle>
@@ -13,7 +13,7 @@
         <a href="/home" class="ml-4 inline-flex text-gray-700 bg-gray-200 border-0 py-2 px-6 focus:outline-none hover:bg-gray-300 rounded text-lg">
           Play a Game
         </a>
-        <p class="mb-8 leading-relaxed">
+        <p class="mb-8 p-4 text-white leading-relaxed">
           Choose from the following categories to test your knowledge: <br />
           Sports, Literature, History, Science, Random
         </p>
@@ -23,17 +23,17 @@
         <a href="/home" class="ml-4 inline-flex text-gray-700 bg-gray-200 border-0 py-2 px-6 focus:outline-none hover:bg-gray-300 rounded text-lg">
           View Your Stats
         </a>
-        <p class="mb-8 leading-relaxed">
+        <p class="mb-8 p-4 text-white leading-relaxed">
           For each game, we track the following stats for you: <br />
           Total # Questions, Correct Answers, Time
         </p>
       </div>
       <div class="inline-block h-[250px] min-h-[1em] w-0.5 self-stretch bg-neutral-100 opacity-100 dark:opacity-50"></div>
       <div class="text-center px-1">
-        <a href="/home" class="ml-4 inline-flex text-gray-700 bg-gray-200 border-0 py-2 px-6 focus:outline-none hover:bg-gray-300 rounded text-lg">
+        <a href="/social" class="ml-4 inline-flex text-gray-700 bg-gray-200 border-0 py-2 px-6 focus:outline-none hover:bg-gray-300 rounded text-lg">
           Socialize
         </a>
-        <p class="mb-8 leading-relaxed">
+        <p class="mb-8 p-4 text-white leading-relaxed">
           We have a Social section. Meet & chat along with fellow players. <br />
           We hope that you keep it civil of course.
         </p>
@@ -53,7 +53,7 @@
     </div>
   </div>
 </section>
-<footer class="text-center lg:text-left bg-gray-100 text-gray-600 w-full lg:fixed lg:bottom-0">
+<footer class="text-center lg:text-left bg-neutral-900 text-white w-full lg:fixed lg:bottom-0">
   <div class="mx-6 py-10 text-center md:text-left">
     <div class="grid grid-1 md:grid-cols-2 lg:grid-cols-4 gap-8 container mx-auto">
       <div class="">
@@ -61,9 +61,6 @@
           Contact
         </h6>
         <ul class="space-y-3">
-          <li>
-            <a href="https://surface-ui.org/">surface-ui.org</a>
-          </li>
           <li>
             <a href="https://github.com/surface-ui/surface">Source</a>
           </li>
@@ -75,9 +72,6 @@
           <li>
             <a href="https://elixirforum.com/t/surface-a-component-based-library-for-phoenix-liveview/">Forum</a>
           </li>
-          <li>
-            <a href="https://elixir-slackin.herokuapp.com/">#surface on Slack</a>
-          </li>
         </ul>
       </div>
       <div class="">
@@ -85,9 +79,6 @@
           Guidelines
         </h6>
         <ul class="space-y-3">
-          <li>
-            <a href="https://phoenixframework.org/">phoenixframework.org</a>
-          </li>
           <li>
             <a href="https://github.com/phoenixframework/phoenix">Source</a>
           </li>
@@ -99,9 +90,6 @@
           <li>
             <a href="https://elixirforum.com/c/phoenix-forum">Forum</a>
           </li>
-          <li>
-            <a href="https://twitter.com/elixirphoenix">Twitter @elixirphoenix</a>
-          </li>
         </ul>
       </div>
       <div class="">
@@ -110,13 +98,7 @@
         </h6>
         <ul class="space-y-3">
           <li>
-            <a href="https://elixir-lang.org/">elixir-lang.org</a>
-          </li>
-          <li>
             <a href="https://github.com/elixir-lang/elixir">Source</a>
-          </li>
-          <li>
-            <a href="https://twitter.com/elixirlang">Twitter @elixirlang</a>
           </li>
           <li>
             <a href="https://elixir-slackin.herokuapp.com/">Elixir on Slack</a>
