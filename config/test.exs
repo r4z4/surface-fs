@@ -12,7 +12,7 @@ config :surface_app, SurfaceApp.Repo,
   username: "postgres",
   password: "postgres",
   hostname: "db",
-  database: "surface_app_test#{System.get_env("MIX_TEST_PARTITION")}",
+  database: "surface_app_test",
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: 10
 
