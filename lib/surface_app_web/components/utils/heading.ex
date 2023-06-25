@@ -13,7 +13,10 @@ defmodule SurfaceAppWeb.Components.Utils.Heading do
     end
 
     defp get_color(color) do
-      "text-" <> color <> "-400"
+      case color do
+        n when n in ["white", "black"] -> "text-" <> color
+                                     _ -> "text-" <> color <> "-400"
+      end  
     end
 
     defp get_size(size) do

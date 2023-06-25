@@ -15,6 +15,7 @@ defmodule SurfaceAppWeb.Components.Utils.Button do
       kind == "is-answer" -> "inline-block px-7 py-3"
       kind == "is-select" -> "font-indie inline-block text-center py-3 font-bold text-xl tracking-wide w-full"
       kind == "is-submit" -> "bg-blue-400 mt-5 hover:bg-blue-600 text-black font-bold py-2 px-8 rounded-full mr-8 float-right"
+      kind == "margined" -> "bg-fucshia-400 hover:bg-fucshia-600 py-2 px-8 rounded-full mx-auto my-4"
     end
   end
 

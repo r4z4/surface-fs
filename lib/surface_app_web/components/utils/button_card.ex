@@ -37,10 +37,10 @@ defmodule SurfaceAppWeb.Components.Utils.ButtonCard do
       <div class="flex justify-center">
         <div class="rounded-lg shadow-lg max-w-sm max-h-60">
           <a href="#!">
-            <img class="max-w-full h-auto rounded-t-md" src={img_src(@label)} alt=""/>
+            <img class="max-w-full h-auto rounded-t-md {@label == 'Literature' ? mb-8 : ''}" src={img_src(@label)} alt=""/>
           </a>
           <div class="">
-            <h5 class="text-gray-900 text-xl font-indie font-medium mb-2">{@label}</h5>
+            <h5 class="text-gray-900 text-xl font-indie font-medium my-2">{@label}</h5>
             <!--<p class="text-gray-700 text-base mb-4">
               Some quick example text to build on the card title and make up the bulk of the card's
               content.

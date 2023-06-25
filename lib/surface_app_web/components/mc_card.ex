@@ -143,7 +143,7 @@ defmodule SurfaceAppWeb.Components.McCard do
     def render(assigns) do
         ~F"""
         <div id="mc_card" class="grid border-solid border-2 border-black-500/50">
-          <Dialog title="Question:" id="dialog">
+          <Dialog class="px-4 border-2 border-fucshia-500" title="Question:" id="dialog">
             {@question_text} <br />
             Correct Answer: <span class="text-orange-600">{ @answer }</span>
           </Dialog>
@@ -175,7 +175,7 @@ defmodule SurfaceAppWeb.Components.McCard do
             </div>
           </div>
           <div :if={@answered} class={"submiss-result", @submission_result}>{ @submission_result }</div>
-          <div :if={@answered} class="answer-reveal">Correct Answer: { @answer }</div>
+          <div :if={@answered} class="text-white font-indie">Correct Answer: { @answer }</div>
           <Button :if={@selected} label={"Submit"} click={"answer"} />
           <br />
           <Button :if={@answered} label={"New Question"}  click={"new"} />
@@ -197,7 +197,7 @@ defmodule SurfaceAppWeb.Components.McCard do
         atom = String.to_existing_atom(to_update)
         {:noreply,
           socket
-          |> assign(atom, "border-solid border-2 border-sky-500")
+          |> assign(atom, "border-solid border-8 border-sky-500")
           |> assign(selected: choice)}
       end
     end

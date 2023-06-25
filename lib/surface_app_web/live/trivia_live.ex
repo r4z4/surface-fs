@@ -50,7 +50,7 @@ defmodule SurfaceAppWeb.TriviaLive do
 
   def render(assigns) do
     ~F"""
-    <Heading title="Surface Trivia" color="green" size="small" />
+    <Heading title="Surface Trivia" color="white" size="medium" />
     <div class="grid grid-cols-1 lg:grid-cols-5 gap-2">
       <div class="grid col-span-1">
         <StatsDisplay user_info={ @user_info } id="user_stats" />

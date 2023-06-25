@@ -176,7 +176,7 @@ defmodule SurfaceAppWeb.Components.Utils.Select do
         IO.inspect atom
         {:noreply,
           socket
-          |> assign(atom, "border-solid border-6 border-sky-500")
+          |> assign(atom, "border-solid border-8 border-sky-500")
           |> assign(cat_selected: true)
           |> assign(game_category: choice)}
       end
@@ -198,7 +198,7 @@ defmodule SurfaceAppWeb.Components.Utils.Select do
         IO.inspect atom
         {:noreply,
           socket
-          |> assign(atom, "border-solid border-6 border-sky-500")
+          |> assign(atom, "border-solid border-8 border-sky-500")
           |> assign(length_selected: true)
           |> assign(game_length: choice)}
       end
@@ -221,7 +221,7 @@ defmodule SurfaceAppWeb.Components.Utils.Select do
         IO.inspect atom
         {:noreply,
           socket
-          |> assign(atom, "border-solid border-6 border-sky-500")
+          |> assign(atom, "border-solid border-8 border-sky-500")
           |> assign(diff_selected: true)
           |> assign(game_diff: choice)}
       end

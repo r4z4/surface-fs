@@ -1,6 +1,7 @@
 defmodule SurfaceAppWeb.GameOverLive do
   use Surface.LiveView
   alias SurfaceAppWeb.Components.Utils.{Button, Heading, Button}
+  alias SurfaceApp.Accounts
 
   # data game_data, :struct
   data game_data, :map
@@ -17,12 +18,22 @@ defmodule SurfaceAppWeb.GameOverLive do
 
   def render(assigns) do
     ~F"""
-    <Heading title="Surface Trivia" />
-    <div class="justify-center w-auto">
+    <Heading color="white" title="Surface Trivia" />
+    <div class="ml-4 justify-center w-auto">
       <Button click="to_home" kind="is-info">Take Me Home</Button>
     </div>
+    <div class="justify-center w-3/5 border-2 border-sky-500 mt-2 mx-auto">
+      <h5 class="text-center text-white">Game Stats</h5>
+      <div class="justify-center w-3/5 border-2 border-white mt-2 mx-auto text-white">
+        <h6>Get the game stats from socket assigns</h6>
+        <p># Questions: </p>
+        <p># Correct: </p>
+        <p>Percentage: </p>
+        <Button class="m-4" click="to_stats" kind="margined">View My Stats</Button>
+      </div>
+    </div>
     <!-- animation -->
-      <section class="p-10 min-h-screen flex md:flex-row items-center justify-around bg-sky-500 flex-wrap sm:flex-col">
+      <section class="p-10 min-h-screen flex md:flex-row items-center justify-around bg-slate-800 flex-wrap sm:flex-col">
 
         <!-- scale -->
         <div class="h-32 w-32 relative cursor-pointer mb-5">
@@ -110,6 +121,10 @@ defmodule SurfaceAppWeb.GameOverLive do
   end
 
     def handle_event("to_home", _value, socket) do
+        {:noreply, push_redirect(socket, to: "/home")}
+    end
+
+    def handle_event("to_stats", _value, socket) do
         {:noreply, push_redirect(socket, to: "/home")}
     end
 

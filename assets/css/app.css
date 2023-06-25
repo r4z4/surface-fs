@@ -76,16 +76,18 @@
 } */
 
 .Correct {
-  color: green;
+  color: rgb(106, 228, 106);
   font-weight: bold;
-  font-size: large;
+  font-family: 'Indie Flower', cursive;
+  font-size: 2vw;
   text-align: center;
 }
 
 .Incorrect {
-  color: red;
+  color: rgb(225, 96, 64);
   font-weight: bold;
-  font-size: large;
+  font-family: 'Indie Flower', cursive;
+  font-size: 2vw;
   text-align: center;
 }
 
