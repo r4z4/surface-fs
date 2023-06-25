@@ -1,16 +1,43 @@
-<section class="text-gray-700 body-font container mx-auto">
-  <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-    <div class="lg:flex-grow lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
-        Welcome to Phoenix!
-      </h1>
+<section class="text-gray-700 bg-slate-950 body-font container mx-auto">
+        <div class="anim_container bg-slate-800">
+          <h1 class="font-indie">Surface Trivia</h1>
+          <svg class="pulse" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <circle id="Oval" cx="512" cy="512" r="512"></circle>
+                <circle id="Oval" cx="512" cy="512" r="512"></circle>
+            <circle id="Oval" cx="512" cy="512" r="512"></circle>
+          </svg>
+        </div>
+  <div class="container mx-auto flex px-5 py-24 md:flex-row items-center">
+    <div class="lg:flex-grow flex justify-center md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+      <div class="text-center px-1">
         <a href="/home" class="ml-4 inline-flex text-gray-700 bg-gray-200 border-0 py-2 px-6 focus:outline-none hover:bg-gray-300 rounded text-lg">
-          Homepage
+          Play a Game
         </a>
-      <p class="mb-8 leading-relaxed">
-        Start building rich interactive user-interfaces, writing minimal custom Javascript.
-        Built on top of Phoenix LiveView, <strong>Surface</strong> leverages the amazing <strong>Phoenix Framework</strong> to provide a fast and productive solution to build modern web applications.
-      </p>
+        <p class="mb-8 leading-relaxed">
+          Choose from the following categories to test your knowledge: <br />
+          Sports, Literature, History, Science, Random
+        </p>
+      </div>
+      <div class="inline-block h-[250px] min-h-[1em] w-0.5 self-stretch bg-neutral-100 opacity-100 dark:opacity-50"></div>
+      <div class="text-center px-1">
+        <a href="/home" class="ml-4 inline-flex text-gray-700 bg-gray-200 border-0 py-2 px-6 focus:outline-none hover:bg-gray-300 rounded text-lg">
+          View Your Stats
+        </a>
+        <p class="mb-8 leading-relaxed">
+          For each game, we track the following stats for you: <br />
+          Total # Questions, Correct Answers, Time
+        </p>
+      </div>
+      <div class="inline-block h-[250px] min-h-[1em] w-0.5 self-stretch bg-neutral-100 opacity-100 dark:opacity-50"></div>
+      <div class="text-center px-1">
+        <a href="/home" class="ml-4 inline-flex text-gray-700 bg-gray-200 border-0 py-2 px-6 focus:outline-none hover:bg-gray-300 rounded text-lg">
+          Socialize
+        </a>
+        <p class="mb-8 leading-relaxed">
+          We have a Social section. Meet & chat along with fellow players. <br />
+          We hope that you keep it civil of course.
+        </p>
+      </div>
       {#if Code.ensure_loaded?(SurfaceAppWeb.Demo)}
         <div class="flex justify-center">
           <a href="/demo" class="inline-flex text-white bg-teal-500 border-0 py-2 px-6 focus:outline-none hover:bg-teal-600 rounded text-lg">
@@ -31,7 +58,7 @@
     <div class="grid grid-1 md:grid-cols-2 lg:grid-cols-4 gap-8 container mx-auto">
       <div class="">
         <h6 class="uppercase font-semibold mb-4 flex justify-center md:justify-start">
-          Surface
+          Contact
         </h6>
         <ul class="space-y-3">
           <li>
@@ -55,7 +82,7 @@
       </div>
       <div class="">
         <h6 class="uppercase font-semibold mb-4 flex justify-center md:justify-start">
-          Phoenix Framework
+          Guidelines
         </h6>
         <ul class="space-y-3">
           <li>
@@ -79,7 +106,7 @@
       </div>
       <div class="">
         <h6 class="uppercase font-semibold mb-4 flex justify-center md:justify-start">
-          Elixir Language
+          More Info
         </h6>
         <ul class="space-y-3">
           <li>
@@ -101,7 +128,7 @@
       </div>
       <div class="">
         <h6 class="uppercase font-semibold mb-4 flex justify-center md:justify-start">
-          Tailwind CSS
+          Resources
         </h6>
         <ul class="space-y-3">
           <li>

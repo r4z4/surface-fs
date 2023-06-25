@@ -5,6 +5,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Open+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Indie+Flower&family=Open+Sans:wght@500&display=swap');
 
 /* Alerts and form errors used by phx.new */
 .alert {
@@ -87,9 +89,14 @@
   text-align: center;
 }
 
-.auth-text {
+.user-menu {
   color: white;
   text-align: right;
+}
+
+.user-menu li {
+  display: inline;
+  padding: 0px 4px;
 }
 
 .phx-modal {
@@ -117,7 +124,7 @@ input:checked {
 }
 
 .phx-modal-content {
-  background-color: #fefefe;
+  background-color: #f3ecec;
   margin: 15vh auto;
   padding: 20px;
   border: 1px solid #888;
@@ -175,4 +182,59 @@ input:checked {
 @keyframes fade-out-keys{
   0% { opacity: 1; }
   100% { opacity: 0; }
+}
+
+.anim_container {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  min-height: 20vh;
+  overflow: hidden;
+  border: 1px solid white;
+  margin-top: 1%;
+}
+
+.anim_container h1 {
+	font-size: 5rem;
+	text-shadow: 0px 1px 0px rgba(255, 255, 255, 1);
+	color: #f8f5f5;
+}
+
+.pulse {
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 30rem;
+}
+.pulse circle {
+  fill: #7e3642;
+  transform: scale(0);
+  opacity: 0;
+  transform-origin: 50% 50%;
+  animation: pulse 4s cubic-bezier(0.5, 0.5, 0, 1);
+  animation-iteration-count: 4;
+}
+.pulse circle:nth-child(2) {
+  fill: #887fc6;
+  animation: pulse 4s 1.5s cubic-bezier(0.5, 0.5, 0, 1);
+  animation-iteration-count: 4;
+}
+.pulse circle:nth-child(3) {
+  fill: #732d58;
+  animation: pulse 4s 3s cubic-bezier(0.5, 0.5, 0, 1);
+  animation-iteration-count: 4;
+}
+
+@keyframes pulse {
+  25% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1);
+  }
 }

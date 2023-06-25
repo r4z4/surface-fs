@@ -9,7 +9,12 @@ module.exports = {
     '../priv/catalogue/**/*.{ex,sface}',
   ],
   theme: {
-    extend: {},
+    extend:     {
+      fontFamily: {
+        'indie': ['Indie Flower', 'cursive'],
+        'amatic': ['Amatic SC', 'cursive']
+      },
+    },
   },
   plugins: [
     // require('tw-elements/dist/plugin'),

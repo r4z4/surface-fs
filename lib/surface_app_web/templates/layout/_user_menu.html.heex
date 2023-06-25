@@ -1,8 +1,8 @@
-<ul class="auth-text">
+<ul class="user-menu">
 <%= if @current_user do %>
-  <li><%= @current_user.email %></li>
+  <li><img class="inline px-1" src="https://upload.wikimedia.org/wikipedia/commons/4/47/OOjs_UI_icon_userAvatarOutline-progressive.svg" alt="user-avatar" /><span class="text-fuchsia-400"><%= @current_user.email %></span></li>
   <li><%= link "Settings", to: Routes.user_settings_path(@conn, :edit) %></li>
-  <li><%= link "Log out", to: Routes.user_session_path(@conn, :delete), method: :delete %></li>
+  <li><%= link "Log out", to: Routes.user_session_path(@conn, :delete), method: :delete %><img class="inline px-1" src="https://upload.wikimedia.org/wikipedia/commons/3/3b/OOjs_UI_icon_logOut-ltr-progressive.svg" alt="logout-icon" /></li>
 <% else %>
   <li><%= link "Register", to: Routes.user_registration_path(@conn, :new) %></li>
   <li><%= link "Log in", to: Routes.user_session_path(@conn, :new) %></li>
