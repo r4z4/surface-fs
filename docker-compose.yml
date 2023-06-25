@@ -1,0 +1,25 @@
+version: "3"
+services:
+  elixir:
+    container_name: elixir-surface_trivia
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - .:/code
+    ports:
+      - 4000:4000
+    init: true
+    tty: true
+  db:
+    container_name: db-surface_trivia
+    image: postgres:9.6
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PGDATA: /var/lib/postgresql/data/pgdata
+    restart: "no"
+    volumes:
+      - ../pgdata:/var/lib/postgresql/data
+
+  

@@ -1,14 +1,10 @@
-# FanCan
+# Surface Trivia From Scratch
 
-To start your Phoenix server:
+### To deploy on Fly.io
 
-  * Run `mix setup` to install and setup dependencies
-  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+To start Phoenix server:
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+  * Install deps w/ `mix deps.get`
+  * Create & migrate DB w/ `mix ecto.setup`
+  * Start Phoenix endpoint w/ `mix phx.server` or inside IEx w/ `iex -S mix phx.server`
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
-
-## Fan Can
-
-Subscriptions occur in HomeLive Module. This is after the user has logged in and arrives at the Home Page.
