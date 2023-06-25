@@ -5,13 +5,13 @@ defmodule SurfaceApp.TestRepo do
   def all(Item, _opts \\ []) do
     [
       %McCard{
-        category: 'string'
-        points_worth: 10
-        question_text: 'string'
-        answer: 'string'
-        choice_one: 'string'
-        choice_two: 'string'
-        choice_three: 'string'
+        category: 'string',
+        points_worth: 10,
+        question_text: 'string',
+        answer: 'string',
+        choice_one: 'string',
+        choice_two: 'string',
+        choice_three: 'string',
         choice_four: 'string'
       }
     ]
