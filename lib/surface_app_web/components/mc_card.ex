@@ -82,6 +82,7 @@ defmodule SurfaceAppWeb.Components.McCard do
           |> assign(choice_three: card.choice_three)
           |> assign(choice_four: card.choice_four)
           |> assign(trivia_card: card)
+          |> assign(game_duration: 0)
           |> assign(player_score: 0)
           |> assign(poss_pts: 0)
           |> assign(question_number: 1)}
@@ -207,6 +208,7 @@ defmodule SurfaceAppWeb.Components.McCard do
         # Stop timer
         {_resp, timer} = socket.assigns.timer
         :timer.cancel(timer)
+        ques_duration = 15 - socket.assigns.seconds
         choice = socket.assigns.selected
         IO.inspect choice
         # Process.send(socket.assigns.receiver_pid, "Hi", [])
@@ -214,14 +216,14 @@ defmodule SurfaceAppWeb.Components.McCard do
         correct_answer = socket.assigns.correct_answer
         # Always add the poss_pts, but only add earned_pts if correct
         earned_pts = if choice == correct_answer do socket.assigns.player_score + socket.assigns.points_worth else socket.assigns.player_score end
-        poss_pts = socket.assigns.poss_pts + socket.assigns.points_worth 
         result = if choice == correct_answer do "Correct" else "Incorrect" end
         {:noreply,
           socket
           |> assign(answer: card.answer)
           |> assign(submission_result: result)
           |> assign(player_score: earned_pts)
-          |> assign(poss_pts: poss_pts)
+          |> assign(game_duration: socket.assigns.game_duration + ques_duration)
+          |> assign(poss_pts: socket.assigns.poss_pts + socket.assigns.points_worth)
           |> assign(answered: true)
           |> assign(selected: false)}
     end
@@ -235,7 +237,7 @@ defmodule SurfaceAppWeb.Components.McCard do
         questions_left = length(s_val)
         IO.inspect(questions_left, label: "Questions Left")
         if questions_left == 0 do
-          game_data = %{score: socket.assigns.player_score, poss_pts: socket.assigns.poss_pts, category: socket.assigns.game_category}
+          game_data = %{score: socket.assigns.player_score, poss_pts: socket.assigns.poss_pts, category: socket.assigns.game_category, game_duration: socket.assigns.game_duration}
           :ets.insert(:current_game, {"game_data", game_data})
           ThinWrapper.put("game_data", game_data)
           persist_game_data(socket.assigns.user_id, socket.assigns.game_diff, socket.assigns.player_score, socket.assigns.poss_pts)

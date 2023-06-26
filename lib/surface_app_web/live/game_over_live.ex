@@ -23,13 +23,13 @@ defmodule SurfaceAppWeb.GameOverLive do
     <div class="ml-4 justify-center w-auto">
       <Button click="to_home" kind="is-info">Take Me Home</Button>
     </div>
-    <div class="justify-center w-3/5 border-2 border-sky-500 mt-2 mx-auto">
-      <h5 class="text-center text-white">Game Stats</h5>
+    <div class="font-indie justify-center w-3/5 border-2 border-sky-500 mt-2 mx-auto">
+      <h5 class="text-center text-2xl text-white">Game Stats</h5>
       <div class="justify-center w-3/5 border-2 border-white mt-2 mx-auto text-white">
-        <h6>Game Stats</h6>
         <p>Possible Points: {@game_data.poss_pts}</p>
         <p>Score: {@game_data.score}</p>
         <p>Category: {@game_data.category}</p>
+        <p>Game Duration: {@game_data.game_duration} seconds</p>
         <p>Percentage: </p>
         <Button click="to_stats" kind="margined">View My Stats</Button>
       </div>
