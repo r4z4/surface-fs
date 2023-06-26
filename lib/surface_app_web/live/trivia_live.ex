@@ -117,9 +117,4 @@ defmodule SurfaceAppWeb.TriviaLive do
     {:noreply, socket |> assign(:seconds, seconds - 1)}
   end
 
-  def handle_info(:hello, socket) do
-    IO.puts "Hello Received"
-    {:noreply, socket}
-  end
-
 end

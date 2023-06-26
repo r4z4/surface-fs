@@ -16,7 +16,8 @@ defmodule SurfaceApp.Application do
       {Phoenix.PubSub, name: SurfaceApp.PubSub},
       # Start the Endpoint (http/https)
       SurfaceAppWeb.Endpoint,
-      SurfaceApp.Presence
+      SurfaceApp.Presence,
+      SurfaceApp.ThinWrapper
       # Start a worker by calling: SurfaceApp.Worker.start_link(arg)
       # {SurfaceApp.Worker, arg}
     ]

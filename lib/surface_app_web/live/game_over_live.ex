@@ -2,6 +2,7 @@ defmodule SurfaceAppWeb.GameOverLive do
   use Surface.LiveView
   alias SurfaceAppWeb.Components.Utils.{Button, Heading, Button}
   alias SurfaceApp.Accounts
+  alias SurfaceApp.ThinWrapper
 
   # data game_data, :struct
   data game_data, :map
@@ -12,7 +13,7 @@ defmodule SurfaceAppWeb.GameOverLive do
     atom = String.to_atom(id_string)
     Process.register(self(), atom)
     # ETS lookup for game stats
-    game_data = %{}
+    game_data = ThinWrapper.get("game_data")
     {:ok, socket |> assign(game_data: game_data)}
   end
 
@@ -25,11 +26,12 @@ defmodule SurfaceAppWeb.GameOverLive do
     <div class="justify-center w-3/5 border-2 border-sky-500 mt-2 mx-auto">
       <h5 class="text-center text-white">Game Stats</h5>
       <div class="justify-center w-3/5 border-2 border-white mt-2 mx-auto text-white">
-        <h6>Get the game stats from socket assigns</h6>
-        <p># Questions: </p>
-        <p># Correct: </p>
+        <h6>Game Stats</h6>
+        <p>Possible Points: {@game_data.poss_pts}</p>
+        <p>Score: {@game_data.score}</p>
+        <p>Category: {@game_data.category}</p>
         <p>Percentage: </p>
-        <Button class="m-4" click="to_stats" kind="margined">View My Stats</Button>
+        <Button click="to_stats" kind="margined">View My Stats</Button>
       </div>
     </div>
     <!-- animation -->

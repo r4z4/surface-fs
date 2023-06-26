@@ -5,6 +5,7 @@ defmodule SurfaceAppWeb.Components.McCard do
     alias SurfaceAppWeb.Components.{Timer, McCardQuestion, Dialog, PlayerScore, QuestionNumber}
     alias SurfaceAppWeb.Components.Utils.{Button}
     alias SurfaceApp.Accounts.UserStats
+    alias SurfaceApp.ThinWrapper
 
     prop seconds, :integer
     prop game_category, :string
@@ -236,6 +237,7 @@ defmodule SurfaceAppWeb.Components.McCard do
         if questions_left == 0 do
           game_data = %{score: socket.assigns.player_score, poss_pts: socket.assigns.poss_pts, category: socket.assigns.game_category}
           :ets.insert(:current_game, {"game_data", game_data})
+          ThinWrapper.put("game_data", game_data)
           persist_game_data(socket.assigns.user_id, socket.assigns.game_diff, socket.assigns.player_score, socket.assigns.poss_pts)
           # Persist User Game Data in DB
           {:noreply, push_redirect(socket, to: "/trivia/end")}

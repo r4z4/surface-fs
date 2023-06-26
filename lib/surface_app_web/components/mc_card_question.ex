@@ -6,7 +6,7 @@ defmodule SurfaceAppWeb.Components.McCardQuestion do
 
     def render(assigns) do
         ~F"""
-          <div class="grid rounded-lg shadow-lg bg-white max-w-sm text-center justify-self-center">
+          <div class="grid rounded-lg px-4 shadow-lg bg-white max-w-sm text-center justify-self-center">
               { @question_text }
           </div>
         """
