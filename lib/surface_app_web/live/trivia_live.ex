@@ -37,7 +37,7 @@ defmodule SurfaceAppWeb.TriviaLive do
     :ets.insert(:current_game, {"game_diff", diff})
     :ets.insert(:current_game, {"game_length", length})
     # Get leaders by category. If choose sports, show sports leaders etc.. 
-    [leader_names, leader_scores] = get_leaders_list()
+    [leader_names, leader_ids, leader_scores] = get_leaders_list()
     {:ok, 
       socket 
       |> assign(user_info: info)
@@ -45,6 +45,7 @@ defmodule SurfaceAppWeb.TriviaLive do
       |> assign(game_diff: diff)
       |> assign(game_length: length)
       |> assign(leader_names: leader_names)
+      |> assign(leader_ids: leader_ids)
       |> assign(leader_scores: leader_scores)}
   end
 
@@ -59,7 +60,7 @@ defmodule SurfaceAppWeb.TriviaLive do
         <McCard id="mc_card" user_id={ Kernel.elem(@user_info, 0) } game_category={ @game_category } game_length={ @game_length } game_diff={ @game_diff } seconds={ @seconds }/>
       </div>
       <div class="grid col-span-1">
-        <Leaderboard leader_names={ @leader_names } leader_scores={ @leader_scores } id="leaderboard" />
+        <Leaderboard user_id={ Kernel.elem(@user_info, 0)} leader_names={ @leader_names } leader_scores={ @leader_scores } leader_ids={ @leader_ids } id="leaderboard" />
       </div>
     </div>
     """
@@ -96,9 +97,12 @@ defmodule SurfaceAppWeb.TriviaLive do
 
   defp get_leaders_list() do
     leader_list = UserStats.list_leaders()
+    IO.inspect(leader_list, label: "Leader List")
     leader_names = Enum.map(leader_list, fn item -> List.first(item) end)
     leader_scores = Enum.map(leader_list, fn item -> List.last(item) end)
-    [leader_names, leader_scores]
+    leader_ids = Enum.map(leader_list, fn item -> List.pop_at(item, 1) |> Kernel.elem(0) end)
+    IO.inspect(leader_ids, label: "Leader IDs")
+    [leader_names, leader_ids, leader_scores]
   end
 
   # def handle_info({:game_category, cat}, socket) do

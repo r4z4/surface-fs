@@ -4,6 +4,7 @@ defmodule SurfaceAppWeb.Components.Leaderboard do
 
   prop leader_names, :list
   prop leader_scores, :list
+  prop leader_ids, :list
 
   def mount(socket) do
     {:ok, socket}
@@ -40,6 +41,7 @@ defmodule SurfaceAppWeb.Components.Leaderboard do
                           #1
                         </td>
                         <td class="text-sm text-gray-900 font-light px-2 py-4 whitespace-nowrap">
+                          <span :if={@user_id == Enum.at(@leader_ids, 0)}>🔥</span>
                           { Enum.at(@leader_names, 0) }
                         </td>
                         <td class="text-sm text-gray-900 font-light px-2 py-4 whitespace-nowrap">
@@ -51,6 +53,7 @@ defmodule SurfaceAppWeb.Components.Leaderboard do
                           #2
                         </td>
                         <td class="text-sm text-gray-900 font-light px-2 py-4 whitespace-nowrap">
+                          <span :if={@user_id == Enum.at(@leader_ids, 1)}>🔥</span>
                           { Enum.at(@leader_names, 1) }
                         </td>
                         <td class="text-sm text-gray-900 font-light px-2 py-4 whitespace-nowrap">
@@ -62,6 +65,7 @@ defmodule SurfaceAppWeb.Components.Leaderboard do
                           #3
                         </td>
                         <td class="text-sm text-gray-900 font-light px-2 py-4 whitespace-nowrap">
+                          <span :if={@user_id == Enum.at(@leader_ids, 2)}>🔥</span>
                           { Enum.at(@leader_names, 2) }
                         </td>
                         <td class="text-sm text-gray-900 font-light px-2 py-4 whitespace-nowrap">
@@ -73,6 +77,7 @@ defmodule SurfaceAppWeb.Components.Leaderboard do
                           #4
                         </td>
                         <td class="text-sm text-gray-900 font-light px-2 py-4 whitespace-nowrap">
+                          <span :if={@user_id == Enum.at(@leader_ids, 3)}>🔥</span>
                           { Enum.at(@leader_names, 3) }
                         </td>
                         <td class="text-sm text-gray-900 font-light px-2 py-4 whitespace-nowrap">
@@ -84,6 +89,7 @@ defmodule SurfaceAppWeb.Components.Leaderboard do
                           #5
                         </td>
                         <td class="text-sm text-gray-900 font-light px-2 py-4 whitespace-nowrap">
+                          <span :if={@user_id == Enum.at(@leader_ids, 4)}>🔥</span>
                           { Enum.at(@leader_names, 4) }
                         </td>
                         <td class="text-sm text-gray-900 font-light px-2 py-4 whitespace-nowrap">
@@ -95,6 +101,7 @@ defmodule SurfaceAppWeb.Components.Leaderboard do
                           #6
                         </td>
                         <td class="text-sm text-gray-900 font-light px-2 py-4 whitespace-nowrap">
+                          <span :if={@user_id == Enum.at(@leader_ids, 5)}>🔥</span>
                           { Enum.at(@leader_names, 5) }
                         </td>
                         <td class="text-sm text-gray-900 font-light px-2 py-4 whitespace-nowrap">
@@ -106,6 +113,7 @@ defmodule SurfaceAppWeb.Components.Leaderboard do
                           #7
                         </td>
                         <td class="text-sm text-gray-900 font-light px-2 py-4 whitespace-nowrap">
+                          <span :if={@user_id == Enum.at(@leader_ids, 6)}>🔥</span>
                           { Enum.at(@leader_names, 6) }
                         </td>
                         <td class="text-sm text-gray-900 font-light px-2 py-4 whitespace-nowrap">
@@ -117,6 +125,7 @@ defmodule SurfaceAppWeb.Components.Leaderboard do
                           #8
                         </td>
                         <td class="text-sm text-gray-900 font-light px-2 py-4 whitespace-nowrap">
+                          <span :if={@user_id == Enum.at(@leader_ids, 7)}>🔥</span>
                           { Enum.at(@leader_names, 7) }
                         </td>
                         <td class="text-sm text-gray-900 font-light px-2 py-4 whitespace-nowrap">
@@ -128,6 +137,7 @@ defmodule SurfaceAppWeb.Components.Leaderboard do
                           #9
                         </td>
                         <td class="text-sm text-white font-light px-2 py-4 whitespace-nowrap">
+                          <span :if={@user_id == Enum.at(@leader_ids, 8)}>🔥</span>
                           { Enum.at(@leader_names, 8) }
                         </td>
                         <td class="text-sm text-white font-light px-2 py-4 whitespace-nowrap">
@@ -139,6 +149,7 @@ defmodule SurfaceAppWeb.Components.Leaderboard do
                           #10
                         </td>
                         <td class="text-sm text-gray-900 font-light px-2 py-4 whitespace-nowrap">
+                          <span :if={@user_id == Enum.at(@leader_ids, 9)}>🔥</span>
                           { Enum.at(@leader_names, 9) }
                         </td>
                         <td class="text-sm text-gray-900 font-light px-2 py-4 whitespace-nowrap">

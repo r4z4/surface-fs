@@ -55,7 +55,7 @@ defmodule SurfaceApp.Accounts.UserStats do
   # end
 
   def list_leaders() do
-    {:ok, result} = SurfaceApp.Repo.query("SELECT users.username, COALESCE(user_stats.easy_earned_pts,0) + COALESCE(user_stats.med_earned_pts,0) + COALESCE(user_stats.hard_earned_pts,0) AS total
+    {:ok, result} = SurfaceApp.Repo.query("SELECT users.username, users.id, COALESCE(user_stats.easy_earned_pts,0) + COALESCE(user_stats.med_earned_pts,0) + COALESCE(user_stats.hard_earned_pts,0) AS total
                             FROM users INNER JOIN user_stats ON users.id = user_stats.id ORDER BY total DESC LIMIT 10;")
     final = Map.get(result, :rows)
     IO.inspect(final, label: "Final")

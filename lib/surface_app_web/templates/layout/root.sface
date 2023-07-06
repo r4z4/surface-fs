@@ -26,7 +26,8 @@
               {#if function_exported?(Routes, :live_dashboard_path, 2)}
                 {link "Live Dashboard", to: Routes.live_dashboard_path(@conn, :home), class: "block mt-4 md:inline-block md:mt-0 text-teal-200 hover:text-white mr-4"}
               {/if}
-              {link "Gameboard", to: "/home", class: "block mt-4 md:inline-block md:mt-0 text-teal-200 hover:text-white mr-4"}
+              {live_patch "Home", to: "/home", class: "block mt-4 md:inline-block md:mt-0 text-teal-200 hover:text-white mr-4"}
+              <!--{link "Gameboard", to: "/home", class: "block mt-4 md:inline-block md:mt-0 text-teal-200 hover:text-white mr-4"}-->
               {link "Social", to: "/social", class: "block mt-4 md:inline-block md:mt-0 text-teal-200 hover:text-white mr-4"}
             </div>
             <div>
