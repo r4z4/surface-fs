@@ -11,7 +11,7 @@ defmodule SurfaceAppWeb.Components.StatsDisplay do
 
   def render(assigns) do
     ~F"""
-    <section class="text-gray-600 body-font bg-gray-50 flex">
+    <section class="text-gray-600 body-font rounded-sm bg-gray-400 flex">
       <div class="container px-5 py-5 mx-auto">
         <div class="grid grid-cols-2 items-center justify-center">
         <div class="grid col-span-2">

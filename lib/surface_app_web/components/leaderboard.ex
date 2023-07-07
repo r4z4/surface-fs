@@ -12,7 +12,7 @@ defmodule SurfaceAppWeb.Components.Leaderboard do
 
   def render(assigns) do
     ~F"""
-    <section class="text-gray-600 body-font bg-gray-50 flex">
+    <section class="text-gray-600 body-font rounded-sm bg-gray-200 flex">
       <div class="container px-5 py-5 mx-auto">
         <div class="grid grid-cols-1 items-center justify-center">
           <Heading title="Leaderboard" color="red" />
@@ -21,22 +21,22 @@ defmodule SurfaceAppWeb.Components.Leaderboard do
             <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
               <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                 <div class="overflow-hidden">
-                  <table class="min-w-full text-center">
-                    <thead class="border-b">
+                  <table class="min-w-full text-center rounded-md">
+                    <thead class="border-b bg-black">
                       <tr>
-                        <th scope="col" class="text-sm font-medium text-gray-900 px-2 py-4">
+                        <th scope="col" class="text-sm font-medium text-white px-2 py-4">
                           Ranking
                         </th>
-                        <th scope="col" class="text-sm font-medium text-gray-900 px-2 py-4">
+                        <th scope="col" class="text-sm font-medium text-white px-2 py-4">
                           User
                         </th>
-                        <th scope="col" class="text-sm font-medium text-gray-900 px-2 py-4">
+                        <th scope="col" class="text-sm font-medium text-white px-2 py-4">
                           Total Score
                         </th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr class="border-b bg-emerald-100 border-emerald-200">
+                      <tr class="border-b bg-gradient-to-r from-indigo-200 via-red-200 to-yellow-100 border-emerald-200">
                         <td class="text-sm text-gray-900 font-small px-2 py-4 whitespace-nowrap">
                           #1
                         </td>
