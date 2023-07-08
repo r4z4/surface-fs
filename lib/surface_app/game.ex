@@ -6,15 +6,6 @@ defmodule SurfaceApp.Game do
     import Ecto.Query
     alias SurfaceApp.Game.GameCard
 
-    def list_cards do
-        [
-            %GameCard{question: "What is the capital of Nebraska?", answer: "Lincoln"},
-            %GameCard{question: "What is the capital of Kansas?", answer: "Topeka"},
-            %GameCard{question: "What is the capital of California?", answer: "Sacramento"},
-            %GameCard{question: "What is the capital of Iowa?", answer: "Des Moines"},
-        ]
-    end
-
     def list_mc_cards(cat) do
         IO.inspect(cat, label: "Cat")
         query = McCard 
@@ -45,13 +36,16 @@ defmodule SurfaceApp.Game do
     defp cat_strs(cat) do
         IO.inspect(cat, label: "cat in Cat Strs")
         cond do
-          cat == "Science-Tech" -> ["Science","Tech"]
-          cat == "Movies" -> ["Movies", "Music"]
+          cat == "Science" -> ["Science"]
+          cat == "Movies" -> ["Movies"]
           cat == "Sports" -> ["Sports"]
-          cat == "World" -> ["World", "Animals", "USA"]
+          cat == "World" -> ["World"]
           cat == "Literature" -> ["Literature", "Literature-HP"]
           cat == "Random" -> ["Random"]
           cat == "USA" -> ["USA"]
+          cat == "Tech" -> ["Tech"]
+          cat == "Music" -> ["Music"]
+          cat == "Animals" -> ["Animals"]
         end
       end
 

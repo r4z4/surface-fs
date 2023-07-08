@@ -20,8 +20,6 @@ defmodule SurfaceAppWeb.Components.Utils.Select do
     data length_5, :string, default: nil
     data length_10, :string, default: nil
     data length_15, :string, default: nil
-    data length_20, :string, default: nil
-    data length_25, :string, default: nil
 
     data cat_selected, :boolean, default: false
 
@@ -31,10 +29,14 @@ defmodule SurfaceAppWeb.Components.Utils.Select do
     data selected_4, :string, default: nil
     data selected_5, :string, default: nil
     data selected_6, :string, default: nil
+    data selected_7, :string, default: nil
+    data selected_8, :string, default: nil
+    data selected_9, :string, default: nil
+    data selected_10, :string, default: nil
 
     def render(assigns) do
         ~F"""
-        <div id="select-container" class="grid items-center mt-2 justify-center px-5">
+        <div id="select-container" class="grid items-center mt-8 border-solid border-2 border-white-500/5 justify-center px-5">
         <div class="grid grid-cols-2 grid-rows-1">
          <div class="col-span-1 pl-4"><h5 class="text-sky-600 font-medium mb-2 mt-2 text-left">Number of Questions</h5></div>
          <div class="col-span-1 pr-4"><h5 class="text-sky-600 font-medium mb-2 mt-2 text-right">Difficulty</h5></div>
@@ -49,13 +51,11 @@ defmodule SurfaceAppWeb.Components.Utils.Select do
                 <div class={"p-4 col-span-1 bg-slate-200 rounded shadow-md", @length_15}>
                   <Button kind="is-select" label={ "15" } value={15} click={"length_select"} />
                 </div>
-                <div class={"p-4 col-span-1 bg-slate-200 rounded shadow-md", @length_20}>
-                  <Button kind="is-select" label={ "20" } value={20} click={"length_select"} />
-                </div>
-                <div class={"p-4 col-span-1 bg-slate-200 rounded shadow-md", @length_25}>
-                  <Button kind="is-select" label={ "25" } value={25} click={"length_select"} />
-                </div>
                 
+                <div class={"col-span-1"}>
+                </div>
+                <div class={"col-span-1"}>
+                </div>
                 <div class={"col-span-1"}>
                 </div>
 
@@ -69,10 +69,10 @@ defmodule SurfaceAppWeb.Components.Utils.Select do
                   <Button kind="is-select" label={ "Hard" } value={"hard"} click={"diff_select"} />
                 </div>
           </div>
-          <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2">
+          <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 mt-8">
             <div class="w-50 p-4">
                 <div class={"p-8 bg-slate-200 rounded shadow-md", @selected_1}>
-                  <ButtonCard label="Sci/Tech" value="1" click={"select"} />
+                  <ButtonCard label="Science" value="1" click={"select"} />
                 </div>
             </div>
             <div class="w-50 p-4">
@@ -97,7 +97,27 @@ defmodule SurfaceAppWeb.Components.Utils.Select do
             </div>
             <div class="w-50 p-4">
                 <div class={"p-8 bg-slate-200 rounded shadow-md", @selected_6}>
-                  <ButtonCard label="Random" value="6" click={"select"} />
+                  <ButtonCard label="USA" value="6" click={"select"} />
+                </div>
+            </div>
+            <div class="w-50 p-4">
+                <div class={"p-8 bg-slate-200 rounded shadow-md", @selected_7}>
+                  <ButtonCard label="Random" value="7" click={"select"} />
+                </div>
+            </div>
+            <div class="w-50 p-4">
+                <div class={"p-8 bg-slate-200 rounded shadow-md", @selected_8}>
+                  <ButtonCard label="Music" value="8" click={"select"} />
+                </div>
+            </div>
+            <div class="w-50 p-4">
+                <div class={"p-8 bg-slate-200 rounded shadow-md", @selected_9}>
+                  <ButtonCard label="Animals" value="9" click={"select"} />
+                </div>
+            </div>
+            <div class="w-50 p-4">
+                <div class={"p-8 bg-slate-200 rounded shadow-md", @selected_10}>
+                  <ButtonCard label="Tech" value="10" click={"select"} />
                 </div>
             </div>
           </div>
@@ -112,12 +132,16 @@ defmodule SurfaceAppWeb.Components.Utils.Select do
     @spec cat_string(String.t()) :: String.t()
     defp cat_string(val) do
       cond do
-        val == "1" -> "Science-Tech"
+        val == "1" -> "Science"
         val == "2" -> "Sports"
         val == "3" -> "World"
         val == "4" -> "Movies"
         val == "5" -> "Literature"
-        val == "6" -> "Random"
+        val == "6" -> "USA"
+        val == "7" -> "Random"
+        val == "8" -> "Music"
+        val == "9" -> "Animals"
+        val == "10" -> "Tech"
       end
     end
 
@@ -132,7 +156,11 @@ defmodule SurfaceAppWeb.Components.Utils.Select do
           |> assign(selected_3: nil)
           |> assign(selected_4: nil)
           |> assign(selected_5: nil)
-          |> assign(selected_6: nil)}
+          |> assign(selected_6: nil)
+          |> assign(selected_7: nil)
+          |> assign(selected_8: nil)
+          |> assign(selected_9: nil)
+          |> assign(selected_10: nil)}
     end
 
     defp clear_length_selected(socket) do
@@ -143,9 +171,7 @@ defmodule SurfaceAppWeb.Components.Utils.Select do
           |> assign(game_length: nil)
           |> assign(length_5: nil)
           |> assign(length_10: nil)
-          |> assign(length_15: nil)
-          |> assign(length_20: nil)
-          |> assign(length_25: nil)}
+          |> assign(length_15: nil)}
     end
     
     defp clear_diff_selected(socket) do

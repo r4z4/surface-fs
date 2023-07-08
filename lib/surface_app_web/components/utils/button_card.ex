@@ -23,11 +23,15 @@ defmodule SurfaceAppWeb.Components.Utils.ButtonCard do
     IO.inspect cat
     cond do
       cat == "Literature" -> "https://upload.wikimedia.org/wikipedia/commons/d/d2/P_writing_blue.png"
-      cat == "Sci/Tech" -> "https://upload.wikimedia.org/wikipedia/commons/3/37/Sciences_exactes.svg"
+      cat == "Science" -> "https://upload.wikimedia.org/wikipedia/commons/3/37/Sciences_exactes.svg"
       cat == "Sports" -> "https://upload.wikimedia.org/wikipedia/commons/7/7f/Generic_football.png"
       cat == "World" -> "https://upload.wikimedia.org/wikipedia/commons/f/f9/Location-pin.png"
       cat == "Movies" -> "https://upload.wikimedia.org/wikipedia/commons/3/3f/Film_reel.svg"
       cat == "Random" -> "https://upload.wikimedia.org/wikipedia/commons/8/84/Question_Mark_Icon.png"
+      cat == "Tech" -> "https://upload.wikimedia.org/wikipedia/commons/8/84/Question_Mark_Icon.png"
+      cat == "Music" -> "https://upload.wikimedia.org/wikipedia/commons/8/84/Question_Mark_Icon.png"
+      cat == "Animals" -> "https://upload.wikimedia.org/wikipedia/commons/8/84/Question_Mark_Icon.png"
+      cat == "USA" -> "https://upload.wikimedia.org/wikipedia/commons/8/84/Question_Mark_Icon.png"
     end
   end
 
