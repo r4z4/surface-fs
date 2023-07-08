@@ -28,10 +28,10 @@ defmodule SurfaceAppWeb.Components.Utils.ButtonCard do
       cat == "World" -> "https://upload.wikimedia.org/wikipedia/commons/f/f9/Location-pin.png"
       cat == "Movies" -> "https://upload.wikimedia.org/wikipedia/commons/3/3f/Film_reel.svg"
       cat == "Random" -> "https://upload.wikimedia.org/wikipedia/commons/8/84/Question_Mark_Icon.png"
-      cat == "Tech" -> "https://upload.wikimedia.org/wikipedia/commons/8/84/Question_Mark_Icon.png"
-      cat == "Music" -> "https://upload.wikimedia.org/wikipedia/commons/8/84/Question_Mark_Icon.png"
-      cat == "Animals" -> "https://upload.wikimedia.org/wikipedia/commons/8/84/Question_Mark_Icon.png"
-      cat == "USA" -> "https://upload.wikimedia.org/wikipedia/commons/8/84/Question_Mark_Icon.png"
+      cat == "Tech" -> "https://upload.wikimedia.org/wikipedia/commons/2/23/Screenshot_of_AWB_script_code_2022.png"
+      cat == "Music" -> "https://upload.wikimedia.org/wikipedia/commons/4/4a/Musical111.jpg"
+      cat == "Animals" -> "https://upload.wikimedia.org/wikipedia/commons/e/ed/Animals_-_Squirrel_monkey_--_Smart-Servier.png"
+      cat == "USA" -> "https://upload.wikimedia.org/wikipedia/commons/4/4c/USA_orthographic_map.png"
     end
   end
 
