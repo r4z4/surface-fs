@@ -57,7 +57,8 @@ defmodule SurfaceAppWeb.Components.McCard do
       [{_s_key, s_val}] = :ets.lookup(:current_game, "question_set")
       questions_left = length(s_val)
       {set_card, new_set} = List.pop_at(s_val, questions_left - 1)
-      card = random_card(c_val)
+      # card = random_card(c_val)
+      card = set_card
       correct_answer = correct_answer(card)
       # IO.inspect(s_val, label: "Question Set")
       # IO.inspect(questions_left, label: "Questions Left")
@@ -244,10 +245,11 @@ defmodule SurfaceAppWeb.Components.McCard do
           # Persist User Game Data in DB
           {:noreply, push_redirect(socket, to: "/trivia/end")}
         else
-          {_set_card, new_set} = List.pop_at(s_val, questions_left - 1)
+          {set_card, new_set} = List.pop_at(s_val, questions_left - 1)
           IO.inspect(new_set, label: "New Set")
           :ets.insert(:current_game, {"question_set", new_set})
-          card = random_card(val)
+          # card = random_card(val)
+          card = set_card
           correct_answer = correct_answer(card)
           Process.send(self(), :reset_seconds, [:noconnect])
           timer = :timer.send_interval(1000, self(), :tick)

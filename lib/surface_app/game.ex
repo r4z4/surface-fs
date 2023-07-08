@@ -42,14 +42,28 @@ defmodule SurfaceApp.Game do
       end
     end
 
+    defp cat_strs(cat) do
+        IO.inspect(cat, label: "cat in Cat Strs")
+        cond do
+          cat == "Science-Tech" -> ["Science","Tech"]
+          cat == "Movies" -> ["Movies", "Music"]
+          cat == "Sports" -> ["Sports"]
+          cat == "World" -> ["World", "Animals", "USA"]
+          cat == "Literature" -> ["Literature", "Literature-HP"]
+          cat == "Random" -> ["Random"]
+          cat == "USA" -> ["USA"]
+        end
+      end
+
     def list_mc_cards(cat, len, diff) do
         IO.inspect(cat, label: "Cat")
         IO.inspect(len, label: "Length")
         query = McCard 
-        |> where([m], m.category == ^cat)
         |> where([m], m.points_worth in ^diff_ints(diff))
+        |> where([m], m.category in ^cat_strs(cat))
         |> order_by(fragment("RANDOM()"))
         |> limit(^len)
+        IO.inspect(query, label: "Query")
         Repo.all(query)
     end
 
