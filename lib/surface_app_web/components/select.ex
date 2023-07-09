@@ -1,4 +1,4 @@
-defmodule SurfaceAppWeb.Components.Utils.Select do
+defmodule SurfaceAppWeb.Components.Select do
     use Surface.LiveComponent
     alias SurfaceApp.Accounts.UserStats
     alias SurfaceAppWeb.Components.Utils.{Button, ButtonCard}
@@ -61,60 +61,60 @@ defmodule SurfaceAppWeb.Components.Utils.Select do
                 </div>
           </div>
           <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 mt-8">
-            <div class="w-50 p-4">
-                <div class={"p-8 bg-slate-200 rounded shadow-md", is_selected(@game_category, "Science")}>
-                  <ButtonCard label="Science" value="Science" click={"select"} />
+            <div class="w-1/1 p-4">
+                <div class={"p-2 bg-slate-200 rounded shadow-md", is_selected(@game_category, "Science")}>
+                  <ButtonCard kind="is-cat-select" label="Science" value="Science" click={"select"} />
                 </div>
             </div>
-            <div class="w-50 p-4">
-                <div class={"p-8 bg-slate-200 rounded shadow-md", is_selected(@game_category, "Sports")}>
-                  <ButtonCard label="Sports" value="Sports" click={"select"} />
+            <div class="w-1/1 p-4">
+                <div class={"p-2 bg-slate-200 rounded shadow-md", is_selected(@game_category, "Sports")}>
+                  <ButtonCard kind="is-cat-select" label="Sports" value="Sports" click={"select"} />
                 </div>
             </div>
-            <div class="w-50 p-4">
-                <div class={"p-8 bg-slate-200 rounded shadow-md", is_selected(@game_category, "World")}>
-                  <ButtonCard label="World" value="World" click={"select"} />
+            <div class="w-1/1 p-4">
+                <div class={"p-2 bg-slate-200 rounded shadow-md", is_selected(@game_category, "World")}>
+                  <ButtonCard kind="is-cat-select" label="World" value="World" click={"select"} />
                 </div>
             </div>
-            <div class="w-50 p-4">
-                <div class={"p-8 bg-slate-200 rounded shadow-md", is_selected(@game_category, "Movies")}>
-                  <ButtonCard label="Movies" value="Movies" click={"select"} />
+            <div class="w-1/1 p-4">
+                <div class={"p-2 bg-slate-200 rounded shadow-md", is_selected(@game_category, "Movies")}>
+                  <ButtonCard kind="is-cat-select" label="Movies" value="Movies" click={"select"} />
                 </div>
             </div>
-            <div class="w-50 p-4">
-                <div class={"p-8 bg-slate-200 rounded shadow-md", is_selected(@game_category, "Literature")}>
-                  <ButtonCard label="Literature" value="Literature" click={"select"} />
+            <div class="w-1/1 p-4">
+                <div class={"p-2 bg-slate-200 rounded shadow-md", is_selected(@game_category, "Literature")}>
+                  <ButtonCard kind="is-cat-select" label="Literature" value="Literature" click={"select"} />
                 </div>
             </div>
-            <div class="w-50 p-4">
-                <div class={"p-8 bg-slate-200 rounded shadow-md", is_selected(@game_category, "Usa")}>
+            <div class="w-1/1 p-4">
+                <div class={"p-2 bg-slate-200 rounded shadow-md", is_selected(@game_category, "Usa")}>
                   <ButtonCard label="USA" value="Usa" click={"select"} />
                 </div>
             </div>
-            <div class="w-50 p-4">
-                <div class={"p-8 bg-slate-200 rounded shadow-md", is_selected(@game_category, "Random")}>
+            <div class="w-1/1 p-4">
+                <div class={"p-2 bg-slate-200 rounded shadow-md", is_selected(@game_category, "Random")}>
                   <ButtonCard label="Random" value="Random" click={"select"} />
                 </div>
             </div>
-            <div class="w-50 p-4">
-                <div class={"p-8 bg-slate-200 rounded shadow-md", is_selected(@game_category, "Music")}>
+            <div class="w-1/1 p-4">
+                <div class={"p-2 bg-slate-200 rounded shadow-md", is_selected(@game_category, "Music")}>
                   <ButtonCard label="Music" value="Music" click={"select"} />
                 </div>
             </div>
-            <div class="w-50 p-4">
-                <div class={"p-8 bg-slate-200 rounded shadow-md", is_selected(@game_category, "Animals")}>
+            <div class="w-1/1 p-4">
+                <div class={"p-2 bg-slate-200 rounded shadow-md", is_selected(@game_category, "Animals")}>
                   <ButtonCard label="Animals" value="Animals" click={"select"} />
                 </div>
             </div>
-            <div class="w-50 p-4">
-                <div class={"p-8 bg-slate-200 rounded shadow-md", is_selected(@game_category, "Tech")}>
+            <div class="w-1/1 p-4">
+                <div class={"p-2 bg-slate-200 rounded shadow-md", is_selected(@game_category, "Tech")}>
                   <ButtonCard label="Tech" value="Tech" click={"select"} />
                 </div>
             </div>
           </div>
 
           <!--<button :if={@cat_selected} :on-click="play_game">Play Game</button>-->
-          <Button :if={@cat_selected && @diff_selected && @length_selected} click="play_game" kind="is-info">Play The Game</Button>
+          <Button :if={@cat_selected > 0 && @diff_selected && @length_selected} click="play_game" kind="is-info">Play The Game</Button>
 
         </div>
         """
@@ -199,8 +199,9 @@ defmodule SurfaceAppWeb.Components.Utils.Select do
         # {:ok, socket} = clear_selected(socket)
         # Only allow a max of three categories
         if socket.assigns.cat_selected >= 3 do
+          IO.puts "Ugh"
           {:noreply,
-          socket |> put_flash(:info, "Sorry, maximum of 3 categories.")}
+          socket |> put_flash(:warning, "Sorry, maximum of 3 categories.")}
         else
           to_update = "selected_#{choice}"
           # FIXME Atoms not garbage collected

@@ -157,22 +157,22 @@ defmodule SurfaceAppWeb.Components.McCard do
           <QuestionNumber id="question_number" points_worth={@points_worth} number={ @question_number } length={ @game_length  } />
           <div class="grid grid-cols-2 sm:gap-1 md:gap-3 lg:gap-4">
             <div class="w-full p-2 lg:w-80">
-                <div class={"p-8 bg-white rounded shadow-md", @selected_1}>
+                <div class={"p-2 bg-white rounded shadow-md", @selected_1}>
                   <Button kind="is-choice" label={ @choice_one } value="1" click={"select"} />
                 </div>
             </div>
             <div class="w-full p-2 lg:w-80">
-                <div class={"p-8 bg-white rounded shadow-md", @selected_2}>
+                <div class={"p-2 bg-white rounded shadow-md", @selected_2}>
                   <Button kind="is-choice" label={ @choice_two } value="2" click={"select"} />
                 </div>
             </div>
             <div class="w-full p-2 lg:w-80">
-                <div class={"p-8 bg-white rounded shadow-md", @selected_3}>
+                <div class={"p-2 bg-white rounded shadow-md", @selected_3}>
                   <Button kind="is-choice" label={ @choice_three } value="3" click={"select"} />
                 </div>
             </div>
             <div class="w-full p-2 lg:w-80">
-                <div class={"p-8 bg-white rounded shadow-md", @selected_4}>
+                <div class={"p-2 bg-white rounded shadow-md", @selected_4}>
                   <Button kind="is-choice" label={ @choice_four } value="4" click={"select"} />
                 </div>
             </div>

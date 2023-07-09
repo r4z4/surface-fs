@@ -48,6 +48,12 @@
 .alert:empty {
   display: none;
 }
+
+.button {
+  display: flex;
+  margin: auto;
+}
+
 .invalid-feedback {
   color: #a94442;
   display: block;

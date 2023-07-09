@@ -76,8 +76,8 @@ defmodule SurfaceAppWeb.Components.SocialDisplayLive do
     </style>
     <section class="">
       <div class="container px-1 mx-auto">
-      <Heading title="Surface Trivia Social" />
-        <div class="flex items-center justify-center">
+      <Heading title="Surface Trivia Social" color="white" />
+        <div class="flex items-center justify-center my-4">
           <!-- Card -->
                 {#for user <- assigns.users}
                   <div class="flex">

@@ -22,16 +22,16 @@ defmodule SurfaceAppWeb.Components.Utils.ButtonCard do
   defp img_src(cat) do
     IO.inspect cat
     cond do
-      cat == "Literature" -> "https://upload.wikimedia.org/wikipedia/commons/d/d2/P_writing_blue.png"
-      cat == "Science" -> "https://upload.wikimedia.org/wikipedia/commons/3/37/Sciences_exactes.svg"
-      cat == "Sports" -> "https://upload.wikimedia.org/wikipedia/commons/7/7f/Generic_football.png"
-      cat == "World" -> "https://upload.wikimedia.org/wikipedia/commons/f/f9/Location-pin.png"
-      cat == "Movies" -> "https://upload.wikimedia.org/wikipedia/commons/3/3f/Film_reel.svg"
-      cat == "Random" -> "https://upload.wikimedia.org/wikipedia/commons/8/84/Question_Mark_Icon.png"
-      cat == "Tech" -> "https://upload.wikimedia.org/wikipedia/commons/2/23/Screenshot_of_AWB_script_code_2022.png"
-      cat == "Music" -> "https://upload.wikimedia.org/wikipedia/commons/4/4a/Musical111.jpg"
-      cat == "Animals" -> "https://upload.wikimedia.org/wikipedia/commons/e/ed/Animals_-_Squirrel_monkey_--_Smart-Servier.png"
-      cat == "USA" -> "https://upload.wikimedia.org/wikipedia/commons/4/4c/USA_orthographic_map.png"
+      cat == "Literature" -> "https://upload.wikimedia.org/wikipedia/commons/c/ca/Noun_Project_books_icon_1069598_cc.svg"
+      cat == "Science" -> "https://upload.wikimedia.org/wikipedia/commons/a/a6/202002_Laboratory_instrument_microscope.svg"
+      cat == "Sports" -> "https://upload.wikimedia.org/wikipedia/commons/1/12/Basketball_-_The_Noun_Project.svg"
+      cat == "World" -> "https://upload.wikimedia.org/wikipedia/commons/a/ab/World_globe_vector_illustration.svg"
+      cat == "Movies" -> "https://upload.wikimedia.org/wikipedia/commons/e/e7/Video-x-generic.svg"
+      cat == "Random" -> "https://upload.wikimedia.org/wikipedia/commons/6/65/Noun_questions_1325510.svg"
+      cat == "Tech" -> "https://upload.wikimedia.org/wikipedia/commons/3/39/Mac_-_The_Noun_Project.svg"
+      cat == "Music" -> "https://upload.wikimedia.org/wikipedia/commons/9/97/Music_-_The_Noun_Project.svg"
+      cat == "Animals" -> "https://upload.wikimedia.org/wikipedia/commons/6/6e/Barking_Dog_-_The_Noun_Project.svg"
+      cat == "USA" -> "https://upload.wikimedia.org/wikipedia/commons/1/11/US_businessman.svg"
     end
   end
 
@@ -39,16 +39,12 @@ defmodule SurfaceAppWeb.Components.Utils.ButtonCard do
     ~F"""
     <button type="button" value={@value} class={"button", @kind} :on-click={@click}>
       <div class="flex justify-center">
-        <div class="rounded-lg shadow-lg max-w-sm max-h-60">
+        <div class="justify-center rounded-lg shadow-lg">
           <a href="#!">
-            <img class="max-w-full h-auto rounded-t-md {@label == 'Literature' ? mb-8 : ''}" src={img_src(@label)} alt=""/>
+            <img class="max-w-full h-auto rounded-t-md" src={img_src(@label)} alt=""/>
           </a>
           <div class="">
             <h5 class="text-gray-900 text-xl font-indie font-medium my-2">{@label}</h5>
-            <!--<p class="text-gray-700 text-base mb-4">
-              Some quick example text to build on the card title and make up the bulk of the card's
-              content.
-            </p>-->
           </div>
         </div>
       </div>

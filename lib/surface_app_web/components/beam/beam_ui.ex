@@ -23,11 +23,10 @@ defmodule SurfaceAppWeb.Components.Beam.BeamUI do
 
   def render(assigns) do
     ~F"""
-    <section class="text-gray-600 body-font bg-gray-50 flex">
+    <section class="text-gray-600 body-font border border-sky-500 p-4 flex rounded-md">
       <div class="container mx-auto w-full">
         <div class="grid grid-cols-1 justify-center w-full">
-          <Heading title="Beam" />
-          <h3 class="mt-2 text-xl font-bold text-center text-blue-500 text-left">Timeline for { Kernel.elem(@user_info, 2) }</h3>
+          <Heading color="sky" title={'Timeline for #{Kernel.elem(@user_info, 2)}'} />
           <p>Following: { Kernel.length(Kernel.elem(@user_info, 3)) }</p>
           <Button kind="is-submit" click={"new_post"} label="New Post" />
           <div :if={@composing} id="post_form">
@@ -50,6 +49,15 @@ defmodule SurfaceAppWeb.Components.Beam.BeamUI do
                       </a>
                       <!-- Component ends here -->
                     </Field>
+                  <Field name="post_category">
+                    <label for="post_category">Select Post Category</label>
+                    <input class="peer" type="radio" value="general" name="post_category" id="general" />
+                    <label for="general">General</label>
+                    <input class="peer" type="radio" value="support" name="post_category" id="support" />
+                    <label for="support">Support</label>
+                    <input class="peer" type="radio" value="trivia" name="post_category" id="trivia" />
+                    <label for="trivia">Trivia</label>
+                  </Field>
                   <Field name="title">
                     <div class="control">
                       <TextInput 

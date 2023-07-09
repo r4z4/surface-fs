@@ -1,8 +1,8 @@
 defmodule SurfaceAppWeb.HomeLive do
   use Surface.LiveView
 
-  alias SurfaceAppWeb.Components.{Dialog, McCard}
-  alias SurfaceAppWeb.Components.Utils.{Heading, Select}
+  alias SurfaceAppWeb.Components.{Dialog, McCard, Select}
+  alias SurfaceAppWeb.Components.Utils.{Heading}
   alias SurfaceApp.Accounts
   alias SurfaceAppWeb.PlayerCountLive
 

@@ -18,11 +18,11 @@ defmodule SurfaceAppWeb.BeamClientLive do
 
   def render(assigns) do
     ~F"""
-    <div id={'beam_client_container_#{Kernel.elem(@user_info, 2)}'} class="grid sm:grid-cols-2 justify-center">
+    <div id={'beam_client_container_#{Kernel.elem(@user_info, 2)}'} class="grid justify-center">
       <div class="grid col-span-1">
         <UserTimelineLive id={ 'user_timeline_live_#{Kernel.elem(@user_info, 2)}' } />
       </div>
-      <div class="grid col-span-1">
+      <div class="grid col-span-1 my-4">
         <UserFollowsLive id={ 'user_follows_live_#{Kernel.elem(@user_info, 2)}' } />
       </div>
     </div>
