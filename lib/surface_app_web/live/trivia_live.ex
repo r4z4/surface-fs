@@ -29,19 +29,21 @@ defmodule SurfaceAppWeb.TriviaLive do
     id_string = "trivia_live_#{id}"
     atom = String.to_atom(id_string)
     Process.register(self(), atom)
-    set = get_question_set(cat, length, diff)
+    set = get_question_set(String.split(cat,"-"), length, diff)
     info = get_all_user_info(session["user_token"])
     :ets.new(:current_game, [:set, :protected, :named_table])
     :ets.insert(:current_game, {"question_set", set})
+    # ETS needs to be string
     :ets.insert(:current_game, {"game_category", cat})
     :ets.insert(:current_game, {"game_diff", diff})
     :ets.insert(:current_game, {"game_length", length})
+    IO.inspect(String.split(cat,"-"), label: "List_cat")
     # Get leaders by category. If choose sports, show sports leaders etc.. 
     [leader_names, leader_ids, leader_scores] = get_leaders_list()
     {:ok, 
       socket 
       |> assign(user_info: info)
-      |> assign(game_category: cat)
+      |> assign(game_category: String.split(cat,"-"))
       |> assign(game_diff: diff)
       |> assign(game_length: length)
       |> assign(leader_names: leader_names)

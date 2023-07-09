@@ -54,7 +54,9 @@ defmodule SurfaceApp.Game do
         IO.inspect(len, label: "Length")
         query = McCard 
         |> where([m], m.points_worth in ^diff_ints(diff))
-        |> where([m], m.category in ^cat_strs(cat))
+        # |> where([m], m.category in ^cat_strs(cat))
+        # cat is already a list now
+        |> where([m], m.category in ^cat)
         |> order_by(fragment("RANDOM()"))
         |> limit(^len)
         IO.inspect(query, label: "Query")

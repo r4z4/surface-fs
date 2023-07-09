@@ -9,7 +9,7 @@ defmodule SurfaceAppWeb.Components.Utils.ButtonCard do
   slot default
 
   def mount(socket) do
-    IO.puts "Socker"
+    IO.puts "Socket"
     IO.inspect socket
     {:noreply, socket}
   end

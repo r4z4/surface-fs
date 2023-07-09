@@ -5,7 +5,7 @@ defmodule SurfaceAppWeb.Components.Utils.Select do
 
     prop user_id, :integer
 
-    data game_category, :string, default: nil
+    data game_category, :list, default: []
     data game_diff, :string, default: nil
     data game_length, :integer, default: nil
 
@@ -21,18 +21,9 @@ defmodule SurfaceAppWeb.Components.Utils.Select do
     data length_10, :string, default: nil
     data length_15, :string, default: nil
 
-    data cat_selected, :boolean, default: false
+    data cat_selected, :integer, default: 0
 
-    data selected_1, :string, default: nil
-    data selected_2, :string, default: nil
-    data selected_3, :string, default: nil
-    data selected_4, :string, default: nil
-    data selected_5, :string, default: nil
-    data selected_6, :string, default: nil
-    data selected_7, :string, default: nil
-    data selected_8, :string, default: nil
-    data selected_9, :string, default: nil
-    data selected_10, :string, default: nil
+    data selected_cats, :list, default: []
 
     def render(assigns) do
         ~F"""
@@ -71,53 +62,53 @@ defmodule SurfaceAppWeb.Components.Utils.Select do
           </div>
           <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 mt-8">
             <div class="w-50 p-4">
-                <div class={"p-8 bg-slate-200 rounded shadow-md", @selected_1}>
-                  <ButtonCard label="Science" value="1" click={"select"} />
+                <div class={"p-8 bg-slate-200 rounded shadow-md", is_selected(@game_category, "Science")}>
+                  <ButtonCard label="Science" value="Science" click={"select"} />
                 </div>
             </div>
             <div class="w-50 p-4">
-                <div class={"p-8 bg-slate-200 rounded shadow-md", @selected_2}>
-                  <ButtonCard label="Sports" value="2" click={"select"} />
+                <div class={"p-8 bg-slate-200 rounded shadow-md", is_selected(@game_category, "Sports")}>
+                  <ButtonCard label="Sports" value="Sports" click={"select"} />
                 </div>
             </div>
             <div class="w-50 p-4">
-                <div class={"p-8 bg-slate-200 rounded shadow-md", @selected_3}>
-                  <ButtonCard label="World" value="3" click={"select"} />
+                <div class={"p-8 bg-slate-200 rounded shadow-md", is_selected(@game_category, "World")}>
+                  <ButtonCard label="World" value="World" click={"select"} />
                 </div>
             </div>
             <div class="w-50 p-4">
-                <div class={"p-8 bg-slate-200 rounded shadow-md", @selected_4}>
-                  <ButtonCard label="Movies" value="4" click={"select"} />
+                <div class={"p-8 bg-slate-200 rounded shadow-md", is_selected(@game_category, "Movies")}>
+                  <ButtonCard label="Movies" value="Movies" click={"select"} />
                 </div>
             </div>
             <div class="w-50 p-4">
-                <div class={"p-8 bg-slate-200 rounded shadow-md", @selected_5}>
-                  <ButtonCard label="Literature" value="5" click={"select"} />
+                <div class={"p-8 bg-slate-200 rounded shadow-md", is_selected(@game_category, "Literature")}>
+                  <ButtonCard label="Literature" value="Literature" click={"select"} />
                 </div>
             </div>
             <div class="w-50 p-4">
-                <div class={"p-8 bg-slate-200 rounded shadow-md", @selected_6}>
-                  <ButtonCard label="USA" value="6" click={"select"} />
+                <div class={"p-8 bg-slate-200 rounded shadow-md", is_selected(@game_category, "Usa")}>
+                  <ButtonCard label="USA" value="Usa" click={"select"} />
                 </div>
             </div>
             <div class="w-50 p-4">
-                <div class={"p-8 bg-slate-200 rounded shadow-md", @selected_7}>
-                  <ButtonCard label="Random" value="7" click={"select"} />
+                <div class={"p-8 bg-slate-200 rounded shadow-md", is_selected(@game_category, "Random")}>
+                  <ButtonCard label="Random" value="Random" click={"select"} />
                 </div>
             </div>
             <div class="w-50 p-4">
-                <div class={"p-8 bg-slate-200 rounded shadow-md", @selected_8}>
-                  <ButtonCard label="Music" value="8" click={"select"} />
+                <div class={"p-8 bg-slate-200 rounded shadow-md", is_selected(@game_category, "Music")}>
+                  <ButtonCard label="Music" value="Music" click={"select"} />
                 </div>
             </div>
             <div class="w-50 p-4">
-                <div class={"p-8 bg-slate-200 rounded shadow-md", @selected_9}>
-                  <ButtonCard label="Animals" value="9" click={"select"} />
+                <div class={"p-8 bg-slate-200 rounded shadow-md", is_selected(@game_category, "Animals")}>
+                  <ButtonCard label="Animals" value="Animals" click={"select"} />
                 </div>
             </div>
             <div class="w-50 p-4">
-                <div class={"p-8 bg-slate-200 rounded shadow-md", @selected_10}>
-                  <ButtonCard label="Tech" value="10" click={"select"} />
+                <div class={"p-8 bg-slate-200 rounded shadow-md", is_selected(@game_category, "Tech")}>
+                  <ButtonCard label="Tech" value="Tech" click={"select"} />
                 </div>
             </div>
           </div>
@@ -145,23 +136,32 @@ defmodule SurfaceAppWeb.Components.Utils.Select do
       end
     end
 
+    defp is_selected(list, str) do
+      if Enum.member?(list, str) do
+        "border-solid border-8 border-sky-500"
+      end
+    end
+
+    @spec cat_list_string([String.t()]) :: String.t()
+    defp cat_list_string(val) do
+      Enum.join(val, "-")
+    end
+
     defp clear_selected(socket) do
         IO.puts "Clear Selected"
         {:ok,
           socket
-          |> assign(cat_selected: false)
-          |> assign(game_category: nil)
-          |> assign(selected_1: nil)
-          |> assign(selected_2: nil)
-          |> assign(selected_3: nil)
-          |> assign(selected_4: nil)
-          |> assign(selected_5: nil)
-          |> assign(selected_6: nil)
-          |> assign(selected_7: nil)
-          |> assign(selected_8: nil)
-          |> assign(selected_9: nil)
-          |> assign(selected_10: nil)}
+          |> assign(cat_selected: 0)
+          |> assign(game_category: [])}
     end
+
+    defp unselect_option(socket, choice) do
+      IO.inspect(choice, label: "choice")
+      {:ok,
+        socket
+        |> assign(cat_selected: socket.assigns.cat_selected - 1)
+        |> assign(game_category: Enum.reject(socket.assigns.game_category, &String.starts_with?(&1, choice)))}
+  end
 
     defp clear_length_selected(socket) do
         IO.puts "Clear Length Selected"
@@ -188,23 +188,28 @@ defmodule SurfaceAppWeb.Components.Utils.Select do
     # Selected will highlight. Answered if times up. Else, must actively submit.
     def handle_event("select", value, socket) do
       # value is %{"value" => "1"}
+      IO.puts(socket.assigns.cat_selected)
       choice = value["value"]
       # If user clicks highlighted, we unhighlight
-      if choice == socket.assigns.game_category do 
-        {:ok, socket} = clear_selected(socket)
+      if choice in socket.assigns.game_category do 
+        # {:ok, socket} = clear_selected(socket)
+        {:ok, socket} = unselect_option(socket, choice)
         {:noreply, socket}
       else
-        {:ok, socket} = clear_selected(socket)
-        to_update = "selected_#{choice}"
-        # FIXME Atoms not garbage collected
-        atom = String.to_existing_atom(to_update)
-        IO.inspect socket.assigns.game_category
-        IO.inspect atom
-        {:noreply,
-          socket
-          |> assign(atom, "border-solid border-8 border-sky-500")
-          |> assign(cat_selected: true)
-          |> assign(game_category: choice)}
+        # {:ok, socket} = clear_selected(socket)
+        # Only allow a max of three categories
+        if socket.assigns.cat_selected >= 3 do
+          {:noreply,
+          socket |> put_flash(:info, "Sorry, maximum of 3 categories.")}
+        else
+          to_update = "selected_#{choice}"
+          # FIXME Atoms not garbage collected
+          IO.inspect socket.assigns.game_category
+          {:noreply,
+            socket
+            |> assign(cat_selected: socket.assigns.cat_selected + 1)
+            |> assign(game_category: [choice | socket.assigns.game_category])}
+        end
       end
     end
     #### Length Select
@@ -258,7 +263,7 @@ defmodule SurfaceAppWeb.Components.Utils.Select do
         length = socket.assigns.game_length
         diff = socket.assigns.game_diff
         UserStats.increment_games_played(socket.assigns.user_id, diff)
-        cat_string = cat_string(category)
+        cat_string = cat_list_string(category)
         # Process.send(:example_live, {:game_category, cat_string}, [:noconnect])
         {:noreply, push_redirect(socket, to: "/trivia/#{length}/#{diff}/#{cat_string}")}
     end

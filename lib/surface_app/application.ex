@@ -10,6 +10,7 @@ defmodule SurfaceApp.Application do
     children = [
       # Start the Ecto repository
       SurfaceApp.Repo,
+      {Finch, name: SurfaceFinch},
       # Start the Telemetry supervisor
       SurfaceAppWeb.Telemetry,
       # Start the PubSub system
