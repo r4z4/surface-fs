@@ -18,7 +18,7 @@ defmodule SurfaceAppWeb.SocialLive do
           <li class="">
             <input class="peer sr-only" type="radio" value="yes" name="answer" id="yes" checked />
             <label class="flex justify-center cursor-pointer rounded-full border border-gray-300 bg-white py-2 px-4 hover:bg-gray-50 focus:outline-none peer-checked:border-transparent peer-checked:ring-2 peer-checked:ring-indigo-500 transition-all duration-500 ease-in-out" for="yes">Timeline</label>
-              <div class="absolute bg-white shadow-lg left-0 p-6 border mt-2 border-indigo-300 rounded-lg w-[97vw] mx-auto transition-all duration-500 ease-in-out translate-x-40 opacity-0 invisible peer-checked:opacity-100 peer-checked:visible peer-checked:translate-x-1">
+              <div class="absolute bg-white shadow-lg left-2 p-6 border mt-2 border-indigo-300 rounded-lg w-[98vw] mx-auto transition-all duration-500 ease-in-out translate-x-40 opacity-0 invisible peer-checked:opacity-100 peer-checked:visible peer-checked:translate-x-1">
                 <div class="px-6 py-4 flex-1 overflow-scroll-x">
                   <BeamClientLive id="beam_client" />
                 </div>
@@ -28,7 +28,7 @@ defmodule SurfaceAppWeb.SocialLive do
           <li class="">
             <input class="peer sr-only" type="radio" value="no" name="answer" id="no" />
             <label class="flex justify-center cursor-pointer rounded-full border border-gray-300 bg-white py-2 px-4 hover:bg-gray-50 focus:outline-none peer-checked:border-transparent peer-checked:ring-2 peer-checked:ring-indigo-500 transition-all duration-500 ease-in-out" for="no">Chat</label>
-              <div class="absolute bg-white shadow-lg left-0 p-6 border mt-2 border-indigo-300 rounded-lg w-[97vw] mx-auto transition-all duration-500 ease-in-out translate-x-40 opacity-0 invisible peer-checked:opacity-100 peer-checked:visible peer-checked:translate-x-1">
+              <div class="absolute bg-white shadow-lg left-2 p-6 border mt-2 border-indigo-300 rounded-lg w-[98vw] mx-auto transition-all duration-500 ease-in-out translate-x-40 opacity-0 invisible peer-checked:opacity-100 peer-checked:visible peer-checked:translate-x-1">
                 <div class="px-6 py-4 flex-1 overflow-scroll-x">
                   <ChatLive id="chat_live" />
                 </div>

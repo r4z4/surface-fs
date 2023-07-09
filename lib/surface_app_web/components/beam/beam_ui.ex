@@ -32,32 +32,34 @@ defmodule SurfaceAppWeb.Components.Beam.BeamUI do
           <div :if={@composing} id="post_form">
             <div class="border-solid border-1 border-sky-500/50 rounded-md">
               <div class="flex justify-center">
-                <Form for={:post} id="post-form" class="justify-center w-full" change="validate" submit="save">
-                    <Field name="private">
-                      <!-- Component starts here -->
-                      <a class="group max-w-max relative mx-1 flex flex-row items-center justify-center p-1 text-gray-500 hover:bg-gray-200 hover:text-gray-600" href="#">
-                          <!-- Text/Icon goes here -->
-                          <Label>Private?</Label><Checkbox class="px-2" id="private" click="toggle_private" />
-                          <!--<p class="text-xs text-center">Hover Me</p>-->
-                          <!-- Tooltip here -->
-                          <div class="[transform:perspective(50px)_translateZ(0)_rotateX(10deg)] group-hover:[transform:perspective(0px)_translateZ(0)_rotateX(0deg)] absolute bottom-0 mb-6 origin-bottom transform rounded text-white opacity-0 transition-all duration-300 group-hover:opacity-100">
-                              <div class="flex max-w-xs flex-col items-center">
-                                  <div class="rounded bg-gray-900 p-2 text-xs text-center shadow-lg">Private messages will only be seen by your followers</div>
-                                  <div class="clip-bottom h-2 w-4 bg-gray-900"></div>
-                              </div>
-                          </div>
-                      </a>
-                      <!-- Component ends here -->
+                  <Form for={:post} id="post-form" class="justify-center w-full" change="validate" submit="save">
+                    <div class="flex">
+                      <Field name="private">
+                        <!-- Component starts here -->
+                        <a class="group max-w-max relative mx-1 flex flex-row items-center justify-center p-1 text-gray-500 hover:bg-gray-200 hover:text-gray-600" href="#">
+                            <!-- Text/Icon goes here -->
+                            <Label class="px-2">Private?</Label><Checkbox class="mx-2 px-2" id="private" click="toggle_private" />
+                            <!--<p class="text-xs text-center">Hover Me</p>-->
+                            <!-- Tooltip here -->
+                            <div class="[transform:perspective(50px)_translateZ(0)_rotateX(10deg)] group-hover:[transform:perspective(0px)_translateZ(0)_rotateX(0deg)] absolute bottom-0 mb-6 origin-bottom transform rounded text-white opacity-0 transition-all duration-300 group-hover:opacity-100">
+                                <div class="flex max-w-xs flex-col items-center">
+                                    <div class="rounded bg-gray-900 p-2 text-xs text-center shadow-lg">Private messages will only be seen by your followers</div>
+                                    <div class="clip-bottom h-2 w-4 bg-gray-900"></div>
+                                </div>
+                            </div>
+                        </a>
+                        <!-- Component ends here -->
+                      </Field>
+                    <Field class="px-4 text-right" name="post_category">
+                      <label class="font-bold" for="post_category">Select Post Category</label>
+                      <input class="peer" type="radio" value="general" name="post_category" id="general" />
+                      <label for="general">General</label>
+                      <input class="peer" type="radio" value="support" name="post_category" id="support" />
+                      <label for="support">Support</label>
+                      <input class="peer" type="radio" value="trivia" name="post_category" id="trivia" />
+                      <label for="trivia">Trivia</label>
                     </Field>
-                  <Field name="post_category">
-                    <label for="post_category">Select Post Category</label>
-                    <input class="peer" type="radio" value="general" name="post_category" id="general" />
-                    <label for="general">General</label>
-                    <input class="peer" type="radio" value="support" name="post_category" id="support" />
-                    <label for="support">Support</label>
-                    <input class="peer" type="radio" value="trivia" name="post_category" id="trivia" />
-                    <label for="trivia">Trivia</label>
-                  </Field>
+                  </div>
                   <Field name="title">
                     <div class="control">
                       <TextInput 
