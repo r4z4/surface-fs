@@ -43,6 +43,7 @@ defmodule SurfaceApp.MixProject do
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:phoenix_live_view, "~> 0.17.5"},
       {:finch, "~> 0.16"},
+      {:benchee, "~> 1.0", only: :dev},
       {:phoenix_live_dashboard, "~> 0.6"},
       {:esbuild, "~> 0.4", runtime: Mix.env() == :dev},
       {:swoosh, "~> 1.3"},

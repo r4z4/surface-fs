@@ -103,6 +103,11 @@ defmodule SurfaceAppWeb.TriviaLive do
     leader_names = Enum.map(leader_list, fn item -> List.first(item) end)
     leader_scores = Enum.map(leader_list, fn item -> List.last(item) end)
     leader_ids = Enum.map(leader_list, fn item -> List.pop_at(item, 1) |> Kernel.elem(0) end)
+
+    zipped = Enum.zip_with(leader_ids, leader_scores, fn x,y -> '#{x}--#{y}' end)
+    {time, your_func_result} = :timer.tc(&Enum.zip_with/3, [leader_ids, leader_scores, fn x,y -> '#{x}--#{y}' end])
+    IO.inspect(time, label: "Time")
+    IO.inspect(zipped, label: "zipped")
     IO.inspect(leader_ids, label: "Leader IDs")
     [leader_names, leader_ids, leader_scores]
   end

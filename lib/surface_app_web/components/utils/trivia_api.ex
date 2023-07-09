@@ -11,6 +11,14 @@ defmodule SurfaceAppWeb.Components.Utils.TriviaApi do
             end
         question_text = json["question"]
         choice_one = Enum.at(json["incorrect_answers"], 0)
+        big_list = json["incorrect_answers"] ++ json["incorrect_answers"] ++ json["incorrect_answers"] ++ json["incorrect_answers"] ++ json["incorrect_answers"] ++ json["incorrect_answers"] ++ json["incorrect_answers"] ++ json["incorrect_answers"]
+        # Time the Enum.at
+        {list_time, _func_result} = :timer.tc(&Enum.at/2, [big_list, 5])
+        IO.inspect(list_time, label: "List Time")
+        tuple = List.to_tuple(big_list)
+        # Time Kernel.elem() access into a Tuple
+        {tup_time, _func_result} = :timer.tc(&Kernel.elem/2, [tuple, 5])
+        IO.inspect(tup_time, label: "Tup Time")
         choice_two = Enum.at(json["incorrect_answers"], 1)
         choice_three = Enum.at(json["incorrect_answers"], 2)
         choice_four = json["correct_answer"]
